@@ -1,19 +1,21 @@
 package com.inviggo.adsapplication.exceptions;
 
-import com.inviggo.adsapplication.controller.AdController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import javax.persistence.EntityNotFoundException;
 import javax.validation.ConstraintViolationException;
-import java.nio.file.AccessDeniedException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,16 +25,22 @@ public class GlobalExceptionHandler {
     private static final Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
     @ExceptionHandler(AccessDeniedException.class)
-    public ResponseEntity<Object> accessDeniedException(AccessDeniedException exception) {
+    public ResponseEntity<Object> handleAccessDeniedException(AccessDeniedException exception) {
         log.error("Access denied", exception);
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(exception.getMessage());
     }
 
-    /*@ExceptionHandler(InternalAuthenticationServiceException.class)
-    public ResponseEntity<Object> authenticationException(InternalAuthenticationServiceException exception) {
+    @ExceptionHandler(InternalAuthenticationServiceException.class)
+    public ResponseEntity<Object> handleAuthenticationException(InternalAuthenticationServiceException exception) {
         log.error("Authentication exception", exception);
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Bad credentials");
-    }*/
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Username doesn't exist");
+    }
+
+    @ExceptionHandler(BadCredentialsException.class)
+    public ResponseEntity<Object> handleBadCredentialsException(BadCredentialsException exception) {
+        log.error("Authentication exception", exception);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Incorrect password");
+    }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Object> handleValidationException(MethodArgumentNotValidException exception) {
@@ -56,6 +64,12 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<Object> handleConstraintViolationException(ConstraintViolationException exception) {
+        log.error("Constraint violation exception", exception);
+        return ResponseEntity.badRequest().build();
+    }
+
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    public ResponseEntity<Object> handleDataIntegrityViolationException(DataIntegrityViolationException exception) {
         log.error("Constraint violation exception", exception);
         return ResponseEntity.badRequest().build();
     }
