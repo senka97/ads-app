@@ -1,22 +1,10 @@
-package com.inviggo.adsapplication.model;
+package com.inviggo.adsapplication.dto;
 
-import com.inviggo.adsapplication.enums.Category;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import java.time.LocalDate;
 
-@Entity
-public class Ad {
+public class AdDTOShow {
 
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
 
     private String name;
@@ -29,18 +17,14 @@ public class Ad {
 
     private LocalDate creationDate;
 
-    @Enumerated(EnumType.STRING)
-    private Category category;
-
-    @ManyToOne
-    @JoinColumn(name="user_id", nullable=false)
-    private User user;
-
-    public Ad() {
-    }
+    private String category;
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -83,19 +67,11 @@ public class Ad {
         this.creationDate = creationDate;
     }
 
-    public Category getCategory() {
+    public String getCategory() {
         return category;
     }
 
-    public void setCategory(Category category) {
+    public void setCategory(String category) {
         this.category = category;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 }

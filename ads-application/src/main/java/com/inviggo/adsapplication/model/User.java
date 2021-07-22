@@ -26,7 +26,7 @@ public class User {
 
     private String phoneNumber;
 
-    @OneToMany(mappedBy="user")
+   @OneToMany(mappedBy="user")
     private Set<Ad> ads;
 
     public User() {

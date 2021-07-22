@@ -9,5 +9,6 @@ public enum Category {
     pets,
     games,
     books,
-    technology
+    technology,
+    other
 }
