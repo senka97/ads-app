@@ -50,8 +50,7 @@ public class AuthenticationController {
         int expiresIn = tokenUtils.getExpiredIn();
 
         log.info("User with username {} logged in", user.getUsername());
-
-        return ResponseEntity.ok(new AuthenticationResponse(jwt, expiresIn));
+        return ResponseEntity.ok(new AuthenticationResponse(jwt, expiresIn, user.getUsername()));
     }
 
     @PostMapping(value = "/register")

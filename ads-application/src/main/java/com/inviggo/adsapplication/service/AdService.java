@@ -3,7 +3,6 @@ package com.inviggo.adsapplication.service;
 import com.inviggo.adsapplication.dto.AdDTOCreateUpdate;
 import com.inviggo.adsapplication.mapper.AdMapper;
 import com.inviggo.adsapplication.model.Ad;
-import com.inviggo.adsapplication.model.User;
 import com.inviggo.adsapplication.repository.AdRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,7 +44,7 @@ public class AdService {
 
     @Transactional(readOnly = true)
     public Page<Ad> getAll(Integer pageNumber){
-        return repository.findAll(PageRequest.of(pageNumber, 10));
+        return repository.findAll(PageRequest.of(pageNumber, 20));
     }
 
     @Transactional(readOnly = true)
@@ -56,8 +55,7 @@ public class AdService {
     @Transactional
     public Ad create(AdDTOCreateUpdate adDTO){
         Ad newAd = mapper.toEntity(new Ad(), adDTO);
-        User user = userService.findById(1L); // pronaci trenutnog korisnika
-        newAd.setUser(user);
+        newAd.setUser(userService.getCurrentUser());
         newAd.setCreationDate(LocalDate.now());
         return repository.save(newAd);
     }
@@ -87,7 +85,7 @@ public class AdService {
         try (OutputStream os = Files.newOutputStream(Paths.get(IMAGE_PATH, imageName), CREATE_NEW)) {
             os.write(file.getBytes());
         } catch (IOException e) {
-            log.error("Error uploading image", e);
+            log.error("Error uploading image ", e);
         }
         return imageName;
     }

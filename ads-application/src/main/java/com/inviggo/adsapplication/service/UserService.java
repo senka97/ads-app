@@ -4,6 +4,8 @@ import com.inviggo.adsapplication.dto.UserDTOCreate;
 import com.inviggo.adsapplication.mapper.UserMapper;
 import com.inviggo.adsapplication.model.User;
 import com.inviggo.adsapplication.repository.UserRepository;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,8 +33,18 @@ public class UserService {
         return repository.save(newUser);
     }
 
+    public User getCurrentUser(){
+        Authentication currentUser = SecurityContextHolder.getContext().getAuthentication();
+        String username = currentUser.getName();
+        return findByUsername(username);
+    }
+
     public User findById(Long id){
         return repository.findById(id).orElseThrow(() ->
                 new EntityNotFoundException(String.format("User with id %d not found", id)));
+    }
+
+    public User findByUsername(String username){
+        return repository.findByUsername(username);
     }
 }

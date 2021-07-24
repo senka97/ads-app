@@ -4,10 +4,7 @@ import com.inviggo.adsapplication.dto.AdDTOCreateUpdate;
 import com.inviggo.adsapplication.dto.AdDTOShow;
 import com.inviggo.adsapplication.enums.Category;
 import com.inviggo.adsapplication.model.Ad;
-import com.inviggo.adsapplication.model.User;
 import org.springframework.stereotype.Component;
-
-import java.time.LocalDate;
 
 
 @Component
