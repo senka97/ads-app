@@ -19,6 +19,8 @@ public class AdDTOShow {
 
     private String category;
 
+    private UserDTOShow user;
+
     public Long getId() {
         return id;
     }
@@ -73,5 +75,13 @@ public class AdDTOShow {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public UserDTOShow getUser() {
+        return user;
+    }
+
+    public void setUser(UserDTOShow user) {
+        this.user = user;
     }
 }

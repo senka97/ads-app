@@ -2,6 +2,7 @@ package com.inviggo.adsapplication.controller;
 
 import com.inviggo.adsapplication.dto.AdDTOCreateUpdate;
 import com.inviggo.adsapplication.dto.AdDTOShow;
+import com.inviggo.adsapplication.enums.Category;
 import com.inviggo.adsapplication.mapper.AdMapper;
 import com.inviggo.adsapplication.model.Ad;
 import com.inviggo.adsapplication.service.AdService;

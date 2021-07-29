@@ -1,6 +1,9 @@
 package com.inviggo.adsapplication.mapper;
 
+import com.inviggo.adsapplication.dto.AdDTOShow;
 import com.inviggo.adsapplication.dto.UserDTOCreate;
+import com.inviggo.adsapplication.dto.UserDTOShow;
+import com.inviggo.adsapplication.model.Ad;
 import com.inviggo.adsapplication.model.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -13,6 +16,18 @@ public class UserMapper {
 
     public UserMapper(PasswordEncoder passwordEncoder){
         this.passwordEncoder = passwordEncoder;
+    }
+
+    public UserDTOShow toDTO(User user){
+
+        UserDTOShow userDTO = new UserDTOShow();
+
+        userDTO.setId(user.getId());
+        userDTO.setUsername(user.getUsername());
+        userDTO.setPhoneNumber(user.getPhoneNumber());
+        userDTO.setRegistrationDate(user.getRegistrationDate());
+
+        return userDTO;
     }
 
     public User toEntity(User user, UserDTOCreate userDTO){

@@ -12,8 +12,7 @@ export class ApiService {
       this.handleErrorResponse
     );
     this.client.interceptors.request.use((config) => {
-      console.log(sessionStorage.getItem("token"));
-      const token = sessionStorage.getItem("token");
+      const token = localStorage.getItem("token");
       config.headers.Authorization = token ? `Bearer ${token}` : "";
       return config;
     });
