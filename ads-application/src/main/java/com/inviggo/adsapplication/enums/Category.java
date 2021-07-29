@@ -1,14 +1,14 @@
 package com.inviggo.adsapplication.enums;
 
 public enum Category {
-    clothing,
-    tools,
-    sports,
-    accessories,
-    furniture,
-    pets,
-    games,
-    books,
-    technology,
-    other
+    CLOTHING,
+    TOOLS,
+    SPORTS,
+    ACCESSORIES,
+    FURNITURE,
+    PETS,
+    GAMES,
+    BOOKS,
+    TECHNOLOGY,
+    OTHER
 }

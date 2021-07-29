@@ -4,14 +4,17 @@ import com.inviggo.adsapplication.dto.AdDTOCreateUpdate;
 import com.inviggo.adsapplication.dto.AdDTOShow;
 import com.inviggo.adsapplication.enums.Category;
 import com.inviggo.adsapplication.model.Ad;
-import com.inviggo.adsapplication.model.User;
 import org.springframework.stereotype.Component;
-
-import java.time.LocalDate;
 
 
 @Component
 public class AdMapper {
+
+    private UserMapper userMapper;
+
+    public AdMapper(UserMapper userMapper){
+        this.userMapper = userMapper;
+    }
 
     public AdDTOShow toDTO(Ad ad){
 
@@ -24,6 +27,7 @@ public class AdMapper {
         adDTO.setPrice(ad.getPrice());
         adDTO.setCategory(ad.getCategory().toString());
         adDTO.setCreationDate(ad.getCreationDate());
+        adDTO.setUser(userMapper.toDTO(ad.getUser()));
 
         return adDTO;
     }
@@ -45,7 +49,7 @@ public class AdMapper {
                 return c;
             }
         }
-        return Category.other;
+        return Category.OTHER;
     }
 
 }
