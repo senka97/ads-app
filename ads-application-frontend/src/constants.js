@@ -4,6 +4,7 @@ export const ROUTES = {
   AUTH_REGISTER: "/auth/register",
   ADS: "/ads",
   UPLOAD_IMAGE: "/upload-image",
+  SEARCH: "/search",
 };
 
 export const IMAGES_URL = "http://localhost:8080/content/";
@@ -19,4 +20,9 @@ export const CATEGORIES = [
   { value: "BOOKS", label: "Books" },
   { value: "TECHNOLOGY", label: "Technology" },
   { value: "OTHER", label: "Other" },
+];
+
+export const SORT = [
+  { value: "MIN", label: "MIN" },
+  { value: "MAX", label: "MAX" },
 ];

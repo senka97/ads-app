@@ -36,8 +36,7 @@ public class Ad {
     @JoinColumn(name="user_id", nullable=false)
     private User user;
 
-    public Ad() {
-    }
+    public Ad(){}
 
     public Long getId() {
         return id;

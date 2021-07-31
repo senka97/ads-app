@@ -10,11 +10,11 @@ import { useHistory } from "react-router-dom";
 import { adsService } from "../services/ads-service";
 
 const AdDetailsModal = ({ ad, modalShow, setModalShow, onDelete }) => {
+  const history = useHistory();
+
   const isCurrentUsersAd = () => {
     return localStorage.getItem("currentUserUsername") === ad.user.username;
   };
-
-  const history = useHistory();
 
   const handleDelete = () => {
     onDelete();

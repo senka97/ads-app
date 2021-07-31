@@ -14,6 +14,24 @@ class AdsService extends HttpService {
     return response.data;
   };
 
+  search = async (pageNumber, searchObj) => {
+    const response = await this.client.get(
+      ROUTES.ADS +
+        ROUTES.SEARCH +
+        "?pageNumber=" +
+        pageNumber +
+        "&category=" +
+        searchObj.category +
+        "&name=" +
+        searchObj.name +
+        "&priceSort=" +
+        searchObj.priceSort +
+        "&showMineOnly=" +
+        searchObj.showMineOnly
+    );
+    return response.data;
+  };
+
   create = async (payload) => {
     const response = await this.client.post(ROUTES.ADS, payload);
     return response.data;
