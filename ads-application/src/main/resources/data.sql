@@ -25,44 +25,44 @@ insert into user_role(user_id, role_id) values (10,1);
 insert into ad (name, description, image_url, price, creation_date, category, user_id)
 values ('Ad 1', 'description', 'clothing.jpg', 10 ,'2021-07-20', 'CLOTHING', 1);
 insert into ad (name, description, image_url, price, creation_date, category, user_id)
-values ('Ad 1', 'description', 'clothing.jpg', 10 ,'2021-07-20', 'CLOTHING', 1);
+values ('Ad 1', 'description', 'clothing.jpg', 11 ,'2021-07-20', 'CLOTHING', 1);
 insert into ad (name, description, image_url, price, creation_date, category, user_id)
-values ('Ad 1', 'description', 'clothing.jpg', 10 ,'2021-07-20', 'CLOTHING', 1);
+values ('Ad 1', 'description', 'clothing.jpg', 12 ,'2021-07-20', 'CLOTHING', 1);
 insert into ad (name, description, image_url, price, creation_date, category, user_id)
-values ('Ad 1', 'description', 'clothing.jpg', 10 ,'2021-07-20', 'CLOTHING', 1);
+values ('Ad 1', 'description', 'clothing.jpg', 13 ,'2021-07-20', 'CLOTHING', 1);
 insert into ad (name, description, image_url, price, creation_date, category, user_id)
-values ('Ad 1', 'description', 'clothing.jpg', 10 ,'2021-07-20', 'CLOTHING', 1);
+values ('Ad 1', 'description', 'clothing.jpg', 1 ,'2021-07-20', 'CLOTHING', 1);
 insert into ad (name, description, image_url, price, creation_date, category, user_id)
-values ('Ad 1', 'description', 'clothing.jpg', 10 ,'2021-07-20', 'CLOTHING', 1);
+values ('Ad 1', 'description', 'clothing.jpg', 2 ,'2021-07-20', 'CLOTHING', 1);
 insert into ad (name, description, image_url, price, creation_date, category, user_id)
-values ('Ad 1', 'description', 'clothing.jpg', 10 ,'2021-07-20', 'CLOTHING', 1);
+values ('Ad 1', 'description', 'clothing.jpg', 100 ,'2021-07-20', 'CLOTHING', 1);
 insert into ad (name, description, image_url, price, creation_date, category, user_id)
-values ('Ad 1', 'description', 'clothing.jpg', 10 ,'2021-07-20', 'CLOTHING', 1);
+values ('Ad 1', 'description', 'clothing.jpg', 110 ,'2021-07-20', 'CLOTHING', 1);
 insert into ad (name, description, image_url, price, creation_date, category, user_id)
-values ('Ad 1', 'description', 'clothing.jpg', 10 ,'2021-07-20', 'CLOTHING', 1);
+values ('Ad 1', 'description', 'clothing.jpg', 15 ,'2021-07-20', 'CLOTHING', 1);
 insert into ad (name, description, image_url, price, creation_date, category, user_id)
-values ('Ad 1', 'description', 'clothing.jpg', 10 ,'2021-07-20', 'CLOTHING', 1);
+values ('Ad 1', 'description', 'clothing.jpg', 19 ,'2021-07-20', 'CLOTHING', 1);
 
 insert into ad (name, description, image_url, price, creation_date, category, user_id)
-values ('Ad 2', 'tool', 'tools.jpg', 10 ,'2021-07-21', 'TOOLS', 2);
+values ('Ad 2', 'tool', 'tools.jpg', 100 ,'2021-07-21', 'TOOLS', 2);
 insert into ad (name, description, image_url, price, creation_date, category, user_id)
 values ('Ad 2', 'tool', 'tools.jpg', 10 ,'2021-07-21', 'TOOLS', 2);
 insert into ad (name, description, image_url, price, creation_date, category, user_id)
-values ('Ad 2', 'tool', 'tools.jpg', 10 ,'2021-07-21', 'TOOLS', 2);
+values ('Ad 2', 'tool', 'tools.jpg', 15 ,'2021-07-21', 'TOOLS', 2);
 insert into ad (name, description, image_url, price, creation_date, category, user_id)
-values ('Ad 2', 'tool', 'tools.jpg', 10 ,'2021-07-21', 'TOOLS', 2);
+values ('Ad 2', 'tool', 'tools.jpg', 23 ,'2021-07-21', 'TOOLS', 2);
 insert into ad (name, description, image_url, price, creation_date, category, user_id)
-values ('Ad 2', 'tool', 'tools.jpg', 10 ,'2021-07-21', 'TOOLS', 2);
+values ('Ad 2', 'tool', 'tools.jpg', 24 ,'2021-07-21', 'TOOLS', 2);
 insert into ad (name, description, image_url, price, creation_date, category, user_id)
-values ('Ad 2', 'tool', 'tools.jpg', 10 ,'2021-07-21', 'TOOLS', 2);
+values ('Ad 2', 'tool', 'tools.jpg', 86 ,'2021-07-21', 'TOOLS', 2);
 insert into ad (name, description, image_url, price, creation_date, category, user_id)
-values ('Ad 2', 'tool', 'tools.jpg', 10 ,'2021-07-21', 'TOOLS', 2);
+values ('Ad 2', 'tool', 'tools.jpg', 1001 ,'2021-07-21', 'TOOLS', 2);
 insert into ad (name, description, image_url, price, creation_date, category, user_id)
-values ('Ad 2', 'tool', 'tools.jpg', 10 ,'2021-07-21', 'TOOLS', 2);
+values ('Ad 2', 'tool', 'tools.jpg', 17 ,'2021-07-21', 'TOOLS', 2);
 insert into ad (name, description, image_url, price, creation_date, category, user_id)
-values ('Ad 2', 'tool', 'tools.jpg', 10 ,'2021-07-21', 'TOOLS', 2);
+values ('Ad 2', 'tool', 'tools.jpg', 53 ,'2021-07-21', 'TOOLS', 2);
 insert into ad (name, description, image_url, price, creation_date, category, user_id)
-values ('Ad 2', 'tool', 'tools.jpg', 10 ,'2021-07-21', 'TOOLS', 2);
+values ('Ad 2', 'tool', 'tools.jpg', 30 ,'2021-07-21', 'TOOLS', 2);
 
 insert into ad (name, description, image_url, price, creation_date, category, user_id)
 values ('Ad 3', 'sport', 'sports.jpg', 10 ,'2021-07-22', 'SPORTS', 3);

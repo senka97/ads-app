@@ -4,6 +4,7 @@ import com.inviggo.adsapplication.dto.AdDTOCreateUpdate;
 import com.inviggo.adsapplication.mapper.AdMapper;
 import com.inviggo.adsapplication.model.Ad;
 import com.inviggo.adsapplication.repository.AdRepository;
+import com.inviggo.adsapplication.specification.AdSpecification;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,6 +22,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
+import java.util.Map;
 import java.util.Objects;
 
 import static java.nio.file.StandardOpenOption.CREATE_NEW;
@@ -46,6 +48,13 @@ public class AdService {
     @Transactional(readOnly = true)
     public Page<Ad> getAll(Integer pageNumber){
         return repository.findAll(PageRequest.of(pageNumber, 20,  Sort.by(Sort.Direction.DESC, "creationDate")));
+    }
+
+    @Transactional(readOnly = true)
+    public Page<Ad> search(Map<String,String> queryParams) {
+        int pageNumber = Integer.parseInt(queryParams.get("pageNumber"));
+        Sort.Direction sortDirection = getPriceSort(queryParams.get("priceSort"));
+        return repository.findAll(new AdSpecification(queryParams, userService.getCurrentUser()), PageRequest.of(pageNumber, 20, Sort.by(sortDirection, "price")));
     }
 
     @Transactional(readOnly = true)
@@ -110,5 +119,13 @@ public class AdService {
                     .toLowerCase();
         }
         return extension;
+    }
+
+    private Sort.Direction getPriceSort(String sort){
+        Sort.Direction sortDirection = Sort.Direction.DESC;
+        if(sort != null && sort.equals("MIN")){
+            sortDirection = Sort.Direction.ASC;
+        }
+        return sortDirection;
     }
 }

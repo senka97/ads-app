@@ -2,7 +2,6 @@ package com.inviggo.adsapplication.controller;
 
 import com.inviggo.adsapplication.dto.AdDTOCreateUpdate;
 import com.inviggo.adsapplication.dto.AdDTOShow;
-import com.inviggo.adsapplication.enums.Category;
 import com.inviggo.adsapplication.mapper.AdMapper;
 import com.inviggo.adsapplication.model.Ad;
 import com.inviggo.adsapplication.service.AdService;
@@ -24,6 +23,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
@@ -43,6 +43,15 @@ public class AdController {
     @GetMapping
     public ResponseEntity<List<AdDTOShow>> getAll(@RequestParam Integer pageNumber){
         Page<Ad> found = service.getAll(pageNumber);
+        return ResponseEntity.ok().body(found
+                .stream()
+                .map(mapper::toDTO)
+                .collect(Collectors.toList()));
+    }
+
+    @GetMapping(value = "/search")
+    public ResponseEntity<List<AdDTOShow>> search(@RequestParam Map<String, String> queryParams){
+        Page<Ad> found = service.search(queryParams);
         return ResponseEntity.ok().body(found
                 .stream()
                 .map(mapper::toDTO)
