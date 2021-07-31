@@ -70,7 +70,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity<Object> handleDataIntegrityViolationException(DataIntegrityViolationException exception) {
-        log.error("Constraint violation exception", exception);
+        log.error("Data integrity violation exception", exception);
         return ResponseEntity.badRequest().build();
     }
 

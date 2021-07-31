@@ -46,8 +46,7 @@ public class User implements UserDetails {
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
     private List<Role> roles = new ArrayList<>();
 
-    public User() {
-    }
+    public User(){}
 
     @Override
     public boolean equals(Object o) {

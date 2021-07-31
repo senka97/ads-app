@@ -1,9 +1,7 @@
 package com.inviggo.adsapplication.mapper;
 
-import com.inviggo.adsapplication.dto.AdDTOShow;
 import com.inviggo.adsapplication.dto.UserDTOCreate;
 import com.inviggo.adsapplication.dto.UserDTOShow;
-import com.inviggo.adsapplication.model.Ad;
 import com.inviggo.adsapplication.model.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;

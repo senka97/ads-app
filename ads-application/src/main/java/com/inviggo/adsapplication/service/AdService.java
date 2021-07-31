@@ -54,7 +54,8 @@ public class AdService {
     public Page<Ad> search(Map<String,String> queryParams) {
         int pageNumber = Integer.parseInt(queryParams.get("pageNumber"));
         Sort.Direction sortDirection = getPriceSort(queryParams.get("priceSort"));
-        return repository.findAll(new AdSpecification(queryParams, userService.getCurrentUser()), PageRequest.of(pageNumber, 20, Sort.by(sortDirection, "price")));
+        return repository.findAll(new AdSpecification(queryParams, userService.getCurrentUser()),
+                PageRequest.of(pageNumber, 20, Sort.by(sortDirection, "price")));
     }
 
     @Transactional(readOnly = true)
