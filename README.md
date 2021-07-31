@@ -17,13 +17,13 @@ Monolitna veb aplikacija za oglašavanje.
 - Potrebno je imati instalirane korišćene tehnologije. 
 - Skinuti projekat na lokalni računar
 - Otpakovati ads-app.zip fajl na C disk (ukoliko želite da aplikacija pristupi slikama oglasa)
-- U application properties podesiti kredencijale baze da odgovaraju instaliranoj MySql bazi na računaru
+- U application.properties fajlu promeniti kredencijale baze tako da odgovaraju instaliranoj MySql bazi na računaru
 - Pozicionirati se u *ads-application* folder, iz njega otvoriti cmd i izvršiti komande: 
   * mvn compile
   * mvn spring-boot:run 
 - Pozicionirati se u *ads-application-frontend* folder, iz njega otvoriti cmd i izvršiti komandu:
   * npm start
 
-Frontend aplikacija će se otvoriti na linku http://localhost:3000 
+Frontend aplikacija će se otvoriti na url-u http://localhost:3000 
 
 Da bi se ulogovali kao bilo koji napravljen korisnik koristiti njegov username iz data.sql skripte a password svakog od njih je: user
