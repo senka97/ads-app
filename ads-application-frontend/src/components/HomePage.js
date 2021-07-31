@@ -144,7 +144,7 @@ const HomePage = () => {
                 onChange={formik.handleChange}
                 value={formik.values.priceSort}
               >
-                <option defaultChecked value="MAX">
+                <option defaultChecked value="">
                   Select price sort
                 </option>
                 {SORT.map((c) => {

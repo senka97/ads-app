@@ -26,7 +26,7 @@ const Login = () => {
         const response = await authService.login(values);
         localStorage.setItem("token", response.accessToken);
         localStorage.setItem("currentUserUsername", response.username);
-        history.push("/");
+        window.location.href = "/";
       } catch (error) {
         if (error.response) {
           console.log("Error: " + JSON.stringify(error.response));
