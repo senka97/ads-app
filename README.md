@@ -1,6 +1,6 @@
 # ads-application
 
-Monolitna veb aplikacija za oglašavanje.
+Monolitna veb aplikacija za postavljanje oglasa.
 
 # Korišćene tehnologije: 
   - Backend
